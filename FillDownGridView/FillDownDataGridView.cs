@@ -183,7 +183,10 @@ namespace FillDownDataGridViewControl
             {
                 for (int r = firstRow; r <= lastRow; r++)
                 {
-                    this[c, r].Selected = true;
+                    if (this.IsValidCellForFillDown(c, r))
+                    {
+                        this[c, r].Selected = true;
+                    }
                 }
             }
         }
@@ -373,11 +376,14 @@ namespace FillDownDataGridViewControl
         {
             if (IsValidCell(columnIndex, rowIndex))
             {
-                if ((!this.FillDownLockColumns && !this.FillDownLockRows)
-                || (this.FillDownLockColumns && columnIndex == this.parentCell.ColumnIndex)
-                || (this.FillDownLockRows && rowIndex == this.parentCell.RowIndex))
+                if (!this[columnIndex, rowIndex].ReadOnly)
                 {
-                    return true;
+                    if ((!this.FillDownLockColumns && !this.FillDownLockRows)
+                    || (this.FillDownLockColumns && columnIndex == this.parentCell.ColumnIndex)
+                    || (this.FillDownLockRows && rowIndex == this.parentCell.RowIndex))
+                    {
+                        return true;
+                    }
                 }
             }
 

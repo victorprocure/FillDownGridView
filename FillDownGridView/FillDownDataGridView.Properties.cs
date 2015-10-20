@@ -79,6 +79,12 @@ namespace FillDownDataGridViewControl
         public Color FillDownParentBorderColor { get; set; }
 
         /// <summary>
+        /// The size of the constraint in the corner of the cell
+        /// </summary>
+        [Description("Size of the contraint in the cell"), Category("Design")]
+        public Size Constraint { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether [row lock].
         /// </summary>
         /// <value>

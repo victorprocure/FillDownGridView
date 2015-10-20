@@ -26,11 +26,6 @@ namespace FillDownDataGridViewControl
         private IContainer components = null;
 
         /// <summary>
-        /// The size of the constraint, I may make this a property
-        /// </summary>
-        private Size constraint = new Size(5, 5);
-
-        /// <summary>
         /// Indicate whether we are currently filling down
         /// </summary>
         private bool fillingDown = false;

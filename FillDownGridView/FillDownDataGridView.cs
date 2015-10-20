@@ -133,7 +133,7 @@ namespace FillDownDataGridViewControl
                 var constraintIndicator = displayedCell;
 
                 // default constraint to bottom right
-                constraintIndicator.Size = new Size(this.constraint.Width, this.constraint.Height);
+                constraintIndicator.Size = new Size(this.Constraint.Width, this.Constraint.Height);
 
                 switch (this.FillDownAnchor)
                 {
